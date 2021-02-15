@@ -2,7 +2,15 @@
   width: 30px;
   height: 30px;
   background-color: blue;
-  margin: 10px;
+  margin: 15px 7px;
+}
+
+.box:first-child {
+  margin-left: 15px;
+}
+
+.box:last-child {
+  margin-right: 15px;
 }
 
 .row {
