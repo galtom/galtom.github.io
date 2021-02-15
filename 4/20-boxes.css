@@ -1,0 +1,23 @@
+.box {
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 20px;
+  border: 2px solid blue;
+  width: fit-content;
+}
+
+.altered {
+  background-color: orangered;
+}
+
+.altered .box {
+  background-color: blueviolet;
+}
