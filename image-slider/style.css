@@ -1,0 +1,47 @@
+.slider {
+  width: 700px;
+  height: 400px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+.slide-left-button,
+.slide-right-button {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slide-left-button img {
+  display: block;
+}
+
+.slide-right-button img {
+  transform: rotateY(180deg);
+}
+
+.image-holder {
+  flex-grow: 1;
+  position: relative;
+}
+
+.image-holder img {
+  width: 100%;
+  height: auto;
+}
+
+.meta {
+  height: 70px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.753);
+}
