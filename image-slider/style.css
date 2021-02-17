@@ -1,5 +1,5 @@
 .slider {
-  width: 700px;
+  width: 800px;
   height: 400px;
   margin: 0 auto 0 auto;
   display: flex;
@@ -10,7 +10,7 @@
 
 .slide-left-button,
 .slide-right-button {
-  width: 60px;
+  width: 70px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -30,11 +30,13 @@
 .image-holder {
   flex-grow: 1;
   position: relative;
+  max-height: 400px;
 }
 
 .image-holder img {
   width: 100%;
   height: auto;
+  max-height: 400px;
 }
 
 .meta {
