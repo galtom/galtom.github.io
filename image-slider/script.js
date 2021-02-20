@@ -23,19 +23,32 @@ let data = [
 
 let currentPhoto = 0;
 
-const loadPhoto = (photoNumber = 0) => {
+function loadPhoto(photoNumber = 0) {
   if (photoNumber > data.length - 1) {
     currentPhoto = 0;
   } else if (photoNumber < 0) {
     currentPhoto = data.length - 1;
   }
 
-  $("#image").attr("src", data[currentPhoto].photo);
+  $("#image")
+    .attr("src", data[currentPhoto].photo)
+    .attr("alt", data[currentPhoto].title);
   $("#image-title").text(data[currentPhoto].title);
   $("#image-desc").text(data[currentPhoto].description);
-};
+}
+
+function loadThumbnails() {
+  const $thumbnails = $(".thumbnails");
+
+  for (let i = 0; i < data.length; i++) {
+    $thumbnails.append(
+      `<li><img src="${data[i].photo}" alt="${data[i].title}"></li>`
+    );
+  }
+}
 
 loadPhoto(currentPhoto);
+loadThumbnails();
 
 /* Events */
 $(".slide-left-button").click((event) => {
