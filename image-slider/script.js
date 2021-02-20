@@ -28,6 +28,8 @@ function loadPhoto(photoNumber = 0) {
     currentPhoto = 0;
   } else if (photoNumber < 0) {
     currentPhoto = data.length - 1;
+  } else {
+    currentPhoto = photoNumber;
   }
 
   $("#image")
@@ -35,6 +37,8 @@ function loadPhoto(photoNumber = 0) {
     .attr("alt", data[currentPhoto].title);
   $("#image-title").text(data[currentPhoto].title);
   $("#image-desc").text(data[currentPhoto].description);
+  $(".thumbnails li[data-id]").removeClass("active");
+  $(".thumbnails li[data-id='" + currentPhoto + "']").addClass("active");
 }
 
 function loadThumbnails() {
@@ -42,23 +46,26 @@ function loadThumbnails() {
 
   for (let i = 0; i < data.length; i++) {
     $thumbnails.append(
-      `<li><img src="${data[i].photo}" alt="${data[i].title}"></li>`
+      `<li data-id="${i}"><img class="thumbnail-img" src="${data[i].photo}" alt="${data[i].title}"></li>`
     );
   }
 }
 
-loadPhoto(currentPhoto);
 loadThumbnails();
+loadPhoto(currentPhoto);
 
 /* Events */
 $(".slide-left-button").click((event) => {
   event.preventDefault();
-  currentPhoto--;
-  loadPhoto(currentPhoto);
+  loadPhoto(currentPhoto + 1);
 });
 
 $(".slide-right-button").click((event) => {
   event.preventDefault();
-  currentPhoto++;
-  loadPhoto(currentPhoto);
+  loadPhoto(currentPhoto + 1);
+});
+
+$(".thumbnail-img").on("click", (event) => {
+  let id = $(event.target).parent("li").data("id");
+  loadPhoto(id);
 });
