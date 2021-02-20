@@ -46,7 +46,7 @@ function loadThumbnails() {
 
   for (let i = 0; i < data.length; i++) {
     $thumbnails.append(
-      `<li data-id="${i}"><img class="thumbnail-img" src="${data[i].photo}" alt="${data[i].title}"></li>`
+      `<li data-id="${i}"><img class="thumbnail-img" src="${data[i].photo}" title="${data[i].title}" alt="${data[i].title}"></li>`
     );
   }
 }
