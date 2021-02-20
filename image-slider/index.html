@@ -8,16 +8,22 @@
     <title>Image Slider</title>
   </head>
   <body>
-    <div class="slider">
-      <div class="slide-left-button"><img src="assets/arrow.svg" /></div>
-      <div class="image-holder">
-        <img id="image" alt="Image1" />
-        <div class="meta">
-          <div id="image-title" class="title">Title</div>
-          <div id="image-desc" class="description">Desc</div>
+    <div class="container">
+      <div class="slider">
+        <a href="#" class="slide-left-button">
+          <img src="assets/arrow.svg" />
+        </a>
+        <div class="image-holder">
+          <img id="image" alt="Image1" />
+          <div class="meta">
+            <div id="image-title" class="title">Title</div>
+            <div id="image-desc" class="description">Desc</div>
+          </div>
         </div>
+        <a href="#" class="slide-right-button">
+          <img src="assets/arrow.svg" />
+        </a>
       </div>
-      <div class="slide-right-button"><img src="assets/arrow.svg" /></div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
